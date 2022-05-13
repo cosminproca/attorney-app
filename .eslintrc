@@ -1,0 +1,27 @@
+{
+    "root": true,
+    "env": {
+        "node": true,
+        "browser": true,
+        "es2021": true,
+        "vue/setup-compiler-macros": true
+    },
+    "extends": [
+        "plugin:vue/vue3-strongly-recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "@vue/typescript/recommended",
+        "prettier"
+    ],
+    "plugins": ["vue", "prettier", "@typescript-eslint"],
+    "parser": "vue-eslint-parser",
+    "parserOptions": {
+        "sourceType": "module",
+        "parser": "@typescript-eslint/parser"
+    },
+    "rules": {
+        "prettier/prettier": "error",
+        "vue/require-default-prop": "off",
+        "vue/script-setup-uses-vars": "error"
+    }
+}
