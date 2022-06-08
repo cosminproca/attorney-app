@@ -31,9 +31,9 @@ class RolesTableSeeder extends Seeder
                 'level'       => 1,
             ],
             [
-                'name'        => 'Attorney',
-                'slug'        => 'attorney',
-                'description' => 'Attorney Role',
+                'name'        => 'Team',
+                'slug'        => 'Team',
+                'description' => 'Team Role',
                 'level'       => 1,
             ],
         ];
