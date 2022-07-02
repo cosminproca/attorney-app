@@ -12,15 +12,15 @@ import { LockClosedIcon } from '@heroicons/vue/solid';
           alt="Workflow"
         />
         <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-100">
-          Sign in to your account
+          Register an account
         </h2>
         <p class="mt-2 text-center text-sm text-gray-50">
           Or
           <router-link
-            to="/client/register"
+            to="/client/login"
             class="font-medium text-blue-300 hover:text-blue-500"
           >
-            start your 14-day free trial
+            sign in to your current account
           </router-link>
         </p>
       </div>
@@ -51,25 +51,45 @@ import { LockClosedIcon } from '@heroicons/vue/solid';
               placeholder="Password"
             />
           </div>
+          <div>
+            <label for="password-confirm" class="sr-only">
+              Confirm Password
+            </label>
+            <input
+              id="password-confirm"
+              name="password_confirm"
+              type="password"
+              autocomplete="confirm-password"
+              required
+              class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-100 rounded-b-md focus:outline-none focus:ring-blue-500 focus:border-blue-500 focus:z-10 sm:text-sm"
+              placeholder="Confirm Password"
+            />
+          </div>
         </div>
 
         <div class="flex items-center justify-between">
           <div class="flex items-center">
             <input
-              id="remember-me"
-              name="remember-me"
+              id="terms-conditions"
+              name="terms_conditions"
               type="checkbox"
               class="h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
             />
-            <label for="remember-me" class="ml-2 block text-sm text-gray-100">
-              Remember me
+            <label
+              for="terms-conditions"
+              class="ml-2 block text-sm text-gray-100"
+            >
+              Agree to terms & conditions
             </label>
           </div>
 
           <div class="text-sm">
-            <a href="#" class="font-medium text-blue-300 hover:text-blue-500">
-              Forgot your password?
-            </a>
+            <router-link
+              to="/client/login"
+              class="font-medium text-blue-300 hover:text-blue-500"
+            >
+              Sign in
+            </router-link>
           </div>
         </div>
 
@@ -84,7 +104,7 @@ import { LockClosedIcon } from '@heroicons/vue/solid';
                 aria-hidden="true"
               />
             </span>
-            Sign in
+            Register
           </button>
         </div>
       </form>

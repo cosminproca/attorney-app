@@ -4,10 +4,10 @@ namespace App\Actions\Fortify;
 
 use App\Enums\Role;
 use App\Models\User;
-use App\Actions\Auth\AttachRoleToUser;
 use Illuminate\Validation\Rule;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules\Enum;
+use App\Actions\Auth\AttachRoleToUser;
 use Illuminate\Support\Facades\Validator;
 use Laravel\Fortify\Contracts\CreatesNewUsers;
 

@@ -1,11 +1,44 @@
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
-import laravel from 'vite-plugin-laravel';
-import eslintPlugin from 'vite-plugin-eslint';
+import laravel from 'laravel-vite-plugin';
+import eslint from 'vite-plugin-eslint';
 
 export default defineConfig({
-  plugins: [vue(), laravel(), eslintPlugin()],
+  plugins: [
+    vue({
+      template: {
+        transformAssetUrls: {
+          base: null,
+          includeAbsolute: false
+        }
+      }
+    }),
+    laravel(['resources/ts/app.ts']),
+    eslint(),
+    {
+      name: 'blade',
+      handleHotUpdate({ file, server }) {
+        if (file.endsWith('.blade.php')) {
+          server.ws.send({
+            type: 'full-reload',
+            path: '*'
+          });
+        }
+      }
+    }
+  ],
+  resolve: {
+    alias: {
+      '@': '/resources/ts',
+      '~': '/resources'
+    }
+  },
   server: {
-    host: '0.0.0.0'
+    hmr: {
+      host: 'localhost'
+    },
+    watch: {
+      usePolling: true
+    }
   }
 });

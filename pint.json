@@ -1,0 +1,13 @@
+{
+    "preset": "laravel",
+    "exclude": [
+        "node_modules",
+        "vendor"
+    ],
+    "rules": {
+        "not_operator_with_successor_space": false,
+        "ordered_imports": {
+            "sort_algorithm": "length"
+        }
+    }
+}
